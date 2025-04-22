@@ -1,0 +1,13 @@
+annotations:
+  app.kubesphere.io/category: Web Server
+apiVersion: v1
+appVersion: 8.5.41
+description: Deploy a basic tomcat application server with sidecar as web archive
+  container
+home: https://github.com/yahavb
+icon: http://tomcat.apache.org/res/images/tomcat.png
+maintainers:
+- email: ybiran@ananware.systems
+  name: yahavb
+name: tomcat
+version: 0.4.3
