@@ -1,0 +1,45 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: 'kubesphere:iam:admin'
+  labels:
+    iam.kubesphere.io/role-ref: admin
+  ownerReferences:
+    - apiVersion: iam.kubesphere.io/v1beta1
+      kind: Role
+      name: admin
+      uid: 0f793830-8d91-4d2c-95b8-ac1f3a3dfc20
+rules:
+  - verbs:
+      - '*'
+    apiGroups:
+      - devops.kubesphere.io
+      - gitops.kubesphere.io
+    resources:
+      - '*'
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+    resources:
+      - events
+  - verbs:
+      - get
+      - list
+      - watch
+      - '*'
+    apiGroups:
+      - iam.kubesphere.io
+    resources:
+      - roles
+      - namespacemembers
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - iam.kubesphere.io
+    resources:
+      - rolebindings

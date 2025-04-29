@@ -1,0 +1,33 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: test1-cicd-6v5g4
+  ownerReferences:
+    - apiVersion: devops.kubesphere.io/v1alpha3
+      kind: PipelineRun
+      name: test1-cicd-6v5g4
+      uid: 97d5ef0d-a8ce-4c36-b6e6-867edd07bbdc
+data:
+  stage: >-
+    [{"displayName":"Clone
+    repository","durationInMillis":1975,"id":"18","result":"SUCCESS","startTime":"2025-04-21T02:39:20Z","state":"FINISHED","type":"STAGE","edges":[{"id":"23","type":"STAGE"}],"restartable":true,"steps":[{"id":"10","displayName":"Check
+    out from version
+    control","type":"STEP","result":"SUCCESS","state":"FINISHED","startTime":"2025-04-21T02:39:00Z","durationInMillis":19528},{"id":"19","displayName":"Check
+    out from version
+    control","type":"STEP","result":"SUCCESS","state":"FINISHED","startTime":"2025-04-21T02:39:20Z","durationInMillis":1949}]},{"displayName":"Run
+    compile","durationInMillis":5293,"id":"23","result":"SUCCESS","startTime":"2025-04-21T02:39:22Z","state":"FINISHED","type":"STAGE","edges":[{"id":"32","type":"STAGE"}],"firstParent":"18","restartable":true,"steps":[{"id":"26","displayName":"Shell
+    Script","displayDescription":"mvn
+    compile","type":"STEP","result":"SUCCESS","state":"FINISHED","startTime":"2025-04-21T02:39:22Z","durationInMillis":5179}]},{"displayName":"Run
+    test","durationInMillis":5243,"id":"32","result":"SUCCESS","startTime":"2025-04-21T02:39:27Z","state":"FINISHED","type":"STAGE","edges":[{"id":"41","type":"STAGE"}],"firstParent":"23","restartable":true,"steps":[{"id":"35","displayName":"Shell
+    Script","displayDescription":"mvn clean
+    test","type":"STEP","result":"SUCCESS","state":"FINISHED","startTime":"2025-04-21T02:39:27Z","durationInMillis":5146}]},{"displayName":"Run
+    build","durationInMillis":4701,"id":"41","result":"SUCCESS","startTime":"2025-04-21T02:39:33Z","state":"FINISHED","type":"STAGE","edges":[{"id":"50","type":"STAGE"}],"firstParent":"32","restartable":true,"steps":[{"id":"44","displayName":"Shell
+    Script","displayDescription":"mvn
+    package","type":"STEP","result":"SUCCESS","state":"FINISHED","startTime":"2025-04-21T02:39:33Z","durationInMillis":4600}]},{"displayName":"Archive
+    artifacts","durationInMillis":1188,"id":"50","result":"SUCCESS","startTime":"2025-04-21T02:39:37Z","state":"FINISHED","type":"STAGE","firstParent":"41","restartable":true,"steps":[{"id":"51","displayName":"Archive
+    the
+    artifacts","type":"STEP","result":"SUCCESS","state":"FINISHED","startTime":"2025-04-21T02:39:37Z","durationInMillis":1159}]}]
+  status: >-
+    {"artifactsZipFile":"/job/host-dev-pro8lwlb/job/test1-cicd/job/master/2/artifact/*zip*/archive.zip","causes":[{"_class":"io.jenkins.blueocean.service.embedded.rest.AbstractRunImpl$BlueCauseImpl","shortDescription":"Started
+    by user
+    admin","userId":"admin","userName":"admin"}],"durationInMillis":62942,"enQueueTime":"2025-04-21T02:38:36Z","endTime":"2025-04-21T02:39:39Z","startTime":"2025-04-21T02:38:36Z","estimatedDurationInMillis":68999,"id":"2","organization":"jenkins","pipeline":"master","replayable":true,"result":"SUCCESS","runSummary":"stable","state":"FINISHED","type":"WorkflowRun","commitId":"faca637cae8ec4b365f9a8cde4454a986c930ef4","branch":{"url":"https://github.com/zjpjly/demo-java/tree/master","isPrimary":true}}

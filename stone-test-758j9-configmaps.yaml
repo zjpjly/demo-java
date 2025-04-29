@@ -1,0 +1,32 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: stone-test-758j9
+  ownerReferences:
+    - apiVersion: devops.kubesphere.io/v1alpha3
+      kind: PipelineRun
+      name: stone-test-758j9
+      uid: 82b49ea3-08ed-4200-8865-0bb711b6702d
+data:
+  stage: >-
+    [{"displayName":"Clone
+    repository","durationInMillis":1949,"id":"18","result":"SUCCESS","startTime":"2025-04-21T02:53:44Z","state":"FINISHED","type":"STAGE","edges":[{"id":"23","type":"STAGE"}],"restartable":true,"steps":[{"id":"10","displayName":"Check
+    out from version
+    control","type":"STEP","result":"SUCCESS","state":"FINISHED","startTime":"2025-04-21T02:53:24Z","durationInMillis":19854},{"id":"19","displayName":"Check
+    out from version
+    control","type":"STEP","result":"SUCCESS","state":"FINISHED","startTime":"2025-04-21T02:53:44Z","durationInMillis":1918}]},{"displayName":"Run
+    compile","durationInMillis":5972,"id":"23","result":"SUCCESS","startTime":"2025-04-21T02:53:46Z","state":"FINISHED","type":"STAGE","edges":[{"id":"32","type":"STAGE"}],"firstParent":"18","restartable":true,"steps":[{"id":"26","displayName":"Shell
+    Script","displayDescription":"mvn
+    compile","type":"STEP","result":"SUCCESS","state":"FINISHED","startTime":"2025-04-21T02:53:46Z","durationInMillis":5858}]},{"displayName":"Run
+    test","durationInMillis":5772,"id":"32","result":"SUCCESS","startTime":"2025-04-21T02:53:52Z","state":"FINISHED","type":"STAGE","edges":[{"id":"41","type":"STAGE"}],"firstParent":"23","restartable":true,"steps":[{"id":"35","displayName":"Shell
+    Script","displayDescription":"mvn clean
+    test","type":"STEP","result":"SUCCESS","state":"FINISHED","startTime":"2025-04-21T02:53:52Z","durationInMillis":5664}]},{"displayName":"Run
+    build","durationInMillis":5102,"id":"41","result":"SUCCESS","startTime":"2025-04-21T02:53:58Z","state":"FINISHED","type":"STAGE","edges":[{"id":"50","type":"STAGE"}],"firstParent":"32","restartable":true,"steps":[{"id":"44","displayName":"Shell
+    Script","displayDescription":"mvn
+    package","type":"STEP","result":"SUCCESS","state":"FINISHED","startTime":"2025-04-21T02:53:58Z","durationInMillis":5014}]},{"displayName":"Archive
+    artifacts","durationInMillis":1176,"id":"50","result":"SUCCESS","startTime":"2025-04-21T02:54:03Z","state":"FINISHED","type":"STAGE","firstParent":"41","restartable":true,"steps":[{"id":"51","displayName":"Archive
+    the
+    artifacts","type":"STEP","result":"SUCCESS","state":"FINISHED","startTime":"2025-04-21T02:54:03Z","durationInMillis":1151}]}]
+  status: >-
+    {"artifactsZipFile":"/job/host-dev-pro8lwlb/job/stone-test/job/test_branch/1/artifact/*zip*/archive.zip","causes":[{"_class":"io.jenkins.blueocean.service.embedded.rest.AbstractRunImpl$BlueCauseImpl","shortDescription":"Branch
+    indexing"}],"durationInMillis":69067,"enQueueTime":"2025-04-21T02:52:56Z","endTime":"2025-04-21T02:54:05Z","startTime":"2025-04-21T02:52:56Z","estimatedDurationInMillis":69067,"id":"1","organization":"jenkins","pipeline":"test_branch","replayable":true,"result":"SUCCESS","runSummary":"stable","state":"FINISHED","type":"WorkflowRun","commitId":"e6e9025661fa258aef0be46f2d542bdd29d71903","branch":{"url":"https://github.com/zjpjly/demo-java/tree/test_branch"}}

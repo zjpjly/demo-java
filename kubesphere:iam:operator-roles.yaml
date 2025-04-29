@@ -1,0 +1,72 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: 'kubesphere:iam:operator'
+  labels:
+    iam.kubesphere.io/role-ref: operator
+  ownerReferences:
+    - apiVersion: iam.kubesphere.io/v1beta1
+      kind: Role
+      name: operator
+      uid: 57ee0550-2eda-473d-9387-4de90ab8a27a
+rules:
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - devops.kubesphere.io
+      - gitops.kubesphere.io
+    resources:
+      - '*'
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+    resources:
+      - events
+  - verbs:
+      - '*'
+    apiGroups:
+      - devops.kubesphere.io
+    resources:
+      - pipelines
+      - pipelines/branches
+      - pipelines/scan
+      - pipelines/checkScriptCompile
+      - checkCron
+      - jenkins
+      - pipelines/jenkinsfile
+      - templates
+      - templates/render
+      - credentials
+      - pipelineruns
+      - pipelines/runs
+      - pipelines/runs/stop
+      - pipelines/runs/replay
+      - pipelines/runs/nodes/steps
+      - pipelines/branches/runs
+      - pipelines/branches/runs/stop
+      - pipelines/branches/runs/replay
+      - pipelines/branches/runs/nodes/steps
+      - pipelines/pipelineruns
+      - gitrepositories
+  - verbs:
+      - '*'
+    apiGroups:
+      - gitops.kubesphere.io
+    resources:
+      - applications
+      - applications/sync
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - iam.kubesphere.io
+    resources:
+      - roles
+      - namespacemembers
+      - rolebindings
